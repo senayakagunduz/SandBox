@@ -1,10 +1,7 @@
 import React from "react";
 
-function Book() {
-  const title = "It's Not Easy Being a Bunny";
-  const author = "Marilyn Sandler";
-  const img =
-    "https://images-na.ssl-images-amazon.com/images/I/51al5c5C52L._SX365_BO1,204,203,200_.jpg";
+function Book({ img, title, author, children }) {
+  //const { img, title, author } = props;
   return (
     <div className="book">
       <img src={img} alt=" " />
@@ -14,6 +11,7 @@ function Book() {
       >
         {author}
       </h3>
+      {children}
     </div>
   );
 }
