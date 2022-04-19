@@ -1,18 +1,32 @@
 import React from "react";
 
-function Book({ img, title, author, children }) {
-  //const { img, title, author } = props;
+const Book = ({ img, title, author }) => {
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target);
+    alert("hello");
+  };
+  const complexExample = (author) => {
+    console.log(author);
+  };
+
   return (
     <div className="book">
       <img src={img} alt=" " />
       <h2>{title}</h2>
-      <h3
-        style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}
+      <h3>{author}</h3>
+      <button type="button" onClick={clickHandler}>
+        referance example
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          complexExample(author);
+        }}
       >
-        {author}
-      </h3>
-      {children}
+        More complex example
+      </button>
     </div>
   );
-}
+};
 export default Book;
